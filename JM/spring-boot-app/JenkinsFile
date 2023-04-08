@@ -32,7 +32,7 @@ pipeline {
     stage('Build and Push Docker Image') {
       environment {
         DOCKER_IMAGE = "cloudtarun97/ultimate-ci-cd:${BUILD_NUMBER}"
-        // DOCKERFILE_LOCATION = "JMSDAK/spring-boot-app/Dockerfile"
+        // DOCKERFILE_LOCATION = "JM/spring-boot-app/Dockerfile"
         REGISTRY_CREDENTIALS = credentials('docker-cred')
       }
       steps {
@@ -47,7 +47,7 @@ pipeline {
     }
     stage('Update Deployment File') {
         environment {
-            GIT_REPO_NAME = "ultimate-CI-CD"
+            GIT_REPO_NAME = "Ultimate"
             GIT_USER_NAME = "cloudtarun97"
         }
         steps {
